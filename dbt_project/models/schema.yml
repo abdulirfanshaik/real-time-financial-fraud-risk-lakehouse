@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: Standardized and scored card authorization events.
+    columns:
+      - name: event_id
+        tests: [not_null, unique]
+      - name: transaction_id
+        tests: [not_null]
+      - name: amount
+        tests: [not_null]
+  - name: fct_fraud_alerts
+    description: Transaction-level fraud and risk alerts for review workflows.
+    columns:
+      - name: event_id
+        tests: [not_null, unique]
+      - name: alert_severity
+        tests:
+          - accepted_values:
+              values: ['MEDIUM', 'HIGH']
+

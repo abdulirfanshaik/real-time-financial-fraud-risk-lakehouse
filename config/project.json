@@ -1,0 +1,37 @@
+{
+  "project_name": "Real-Time Financial Fraud and Risk Lakehouse",
+  "currency": "USD",
+  "risk": {
+    "alert_score_threshold": 60,
+    "high_severity_threshold": 80,
+    "high_value_amount": 2000.0,
+    "velocity_window_minutes": 10,
+    "velocity_count_threshold": 4,
+    "high_risk_categories": ["CRYPTO", "GAMBLING"],
+    "demo_high_risk_countries": ["HRC"]
+  },
+  "quality": {
+    "max_reject_rate": 0.005,
+    "max_duplicate_rate": 0.05,
+    "required_fields": [
+      "event_id",
+      "transaction_id",
+      "customer_id",
+      "account_id",
+      "card_id",
+      "event_ts",
+      "ingest_ts",
+      "amount",
+      "currency",
+      "merchant_id",
+      "merchant_category",
+      "merchant_country",
+      "customer_country",
+      "device_id",
+      "channel",
+      "decision",
+      "source_system"
+    ]
+  }
+}
+

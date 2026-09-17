@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: lakehouse
+    database: FINANCIAL_RISK
+    schema: SILVER
+    tables:
+      - name: card_transactions
+        columns:
+          - name: event_id
+            tests: [not_null, unique]
+          - name: customer_id
+            tests: [not_null]
+          - name: amount
+            tests: [not_null]
+

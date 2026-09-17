@@ -1,0 +1,14 @@
+name: financial_fraud_risk
+version: "1.0.0"
+config-version: 2
+profile: financial_fraud_risk
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  financial_fraud_risk:
+    +materialized: view
+    marts:
+      +materialized: table
+

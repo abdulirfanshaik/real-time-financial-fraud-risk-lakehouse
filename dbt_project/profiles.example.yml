@@ -1,0 +1,14 @@
+financial_fraud_risk:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: FRAUD_RISK_TRANSFORMER
+      database: FINANCIAL_RISK
+      warehouse: TRANSFORMING_WH
+      schema: ANALYTICS
+      threads: 4
+

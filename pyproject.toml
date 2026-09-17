@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "financial-fraud-risk-lakehouse"
+version = "1.0.0"
+description = "Runnable financial fraud and risk lakehouse demonstration"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+streaming = ["kafka-python"]
+spark = ["pyspark"]
+warehouse = ["dbt-snowflake"]
+orchestration = ["apache-airflow"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
